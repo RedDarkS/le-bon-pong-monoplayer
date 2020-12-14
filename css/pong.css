@@ -1,0 +1,202 @@
+/** id > class **/
+body {
+    /** Fond noir, couleur blanche et typographie monospace **/
+    background-color: #000000;
+    color: #FF69B4;
+    font-family: monospace;
+
+    /** permet de centrer les elements dans la page **/
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/** parametrage du ou des "objets" terrain **/
+#terrain {
+    position: relative;
+
+    border: 1px solid #000;
+    border-top-color: #FF69B4;
+    border-bottom-color: #FF69B4;
+
+    width: 800px;
+    height: 400px;
+}
+
+.tiltHaut {
+    border-top-color: rgb(0, 250, 0) !important;
+}
+
+.tiltBas {
+    border-bottom-color: rgb(0, 250, 0) !important;
+}
+.tiltGauche {
+    border-left-color: rgb(250, 0, 0) !important;
+}
+
+.tiltDroite {
+    border-right-color: rgb(250, 0, 0) !important;
+}
+
+/** parametrage du ou des "objets" balle **/
+#balle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    background-color: #FFC0CB;
+}
+
+/** parametrage du ou des "objets" raquette **/
+.raquette {
+    position: absolute;
+
+    --hauteur: 25%; /** definir une variable **/
+
+    top: calc(50% - var(--hauteur) / 2); /** clac, faire des calculs en css // var utiliser la variable **/
+
+    width: 10px;
+    height: var(--hauteur);
+    background-color: #FFC0CB;
+    transition : transform 0.05s;
+}
+.tiltRaquette{
+    background-color: #FF69B4 !important;
+    filter : blur(4px);
+    transform : translateX(20px);
+}
+#droite.tiltRaquette{
+    transform : translateX(-20px);
+}
+
+#droite {
+    right: 1%;
+}
+
+#gauche {
+    left: 1%;
+}
+
+/** parametrage pour affichage du score **/
+.score{
+    top : 0;
+    width : 50%;
+    height : 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    float:left;
+    color: #FFC0CB;
+}
+
+/** parametrage pour affichage de la vie **/
+.vie{
+    top : 0;
+    width : 50%;
+    height : 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    float:right;
+    color: #FFC0CB;
+}
+
+.ecran-debut{
+    transition: all 2s;
+    box-sizing: border-box;
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height: 100%;
+    background : rgba(230, 230, 255, 0.15);
+    z-index: 1;
+    display : flex;
+
+    justify-content : center;
+    align-items: center;
+    flex-direction : column;
+    text-align: center;
+    padding: 50px;
+}
+#ecran-debut>*{
+    margin : 10px;
+}
+#ecran-debut .touche{
+    display: inline-flex;
+    transform: rotate(0deg) !important;
+}
+
+/* disparition de l'écran de début */
+#ecran-debut{
+    transition: all 2s;
+    transition-duration: 1s;
+    will-change: opacity, filter;
+    opacity: 1;
+    filter: blur(0px);
+}
+#ecran-debut.invisible{
+    pointer-events: none;
+    opacity: 0;
+    filter: blur(15px);
+}
+
+/* bouton jouer sur l'ecran de début */
+.btn{
+    color: #FFF;
+    background-color: #FF69B4;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.ecran-fin{
+    transition: all 2s;
+    box-sizing: border-box;
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height: 100%;
+    background : rgba(230, 230, 255, 0.15);
+    z-index: 1;
+    display : flex;
+
+    justify-content : center;
+    align-items: center;
+    flex-direction : column;
+    text-align: center;
+    padding: 50px;
+}
+#ecran-fin>*{
+    margin : 10px;
+}
+#ecran-fin .touche{
+    display: inline-flex;
+    transform: rotate(0deg) !important;
+}
+
+/* disparition de l'écran de début */
+#ecran-fin{
+    transition: all 2s;
+    transition-duration: 1s;
+    will-change: opacity, filter;
+    opacity: 1;
+    filter: blur(0px);
+}
+#ecran-fin.invisible{
+    pointer-events: none;
+    opacity: 0;
+    filter: blur(15px);
+}

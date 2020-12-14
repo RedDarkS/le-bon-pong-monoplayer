@@ -1,0 +1,48 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css/pong.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+    <title>Girly Pong</title>
+</head>
+<body>
+
+<div id="ecran-debut" class="ecran-debut">
+    <div>
+        utilise les touches <br><br>
+        <span class="touche">H</span>
+        et
+        <span class="touche">B</span>
+    </div>
+    <div>Tu dispose de 5 vies <br><br></div>
+    <!--
+    <img src="https://img2.freepng.fr/20180329/tuw/kisspng-heart-pixel-art-clip-art-pixel-5abd97e2c49a13.6923008715223746268053.jpg" width=750px />
+    -->
+    <a id="btn-jouer" href="#" class="btn btn-go">JOUER</a>
+</div>
+
+<div id="ecran-fin" class="ecran-fin">
+    <div id="scoreFin">Bravo tu as obtenu X points <br><br></div>
+    <a id="btn-rejouer" href="#" class="btn btn-go">REJOUER</a>
+</div>
+
+<div id="terrain">
+    <!-- affichage des score -->
+    <div id="score" class="score">Score : 0</div>
+    <!-- affichage de la vie -->
+    <div id="vie" class="vie">Vies : 5</div>
+    <!-- div pour balle -->
+    <div id="balle"></div>
+    <!-- div pour raquettes -->
+    <div id="gauche" class="raquette"></div>
+    <div id="droite" class="raquette"></div>
+</div>
+</body>
+    <!-- chargement des classes -->
+    <script src="js/Joueur.js"></script>
+    <script src="js/Balle.js"></script>
+    <script src="js/Terrain.js"></script>
+    <script src="js/Raquette.js"></script>
+    <script src="js/Son.js"></script>
+    <script src="js/main.js"></script>
+</html>
